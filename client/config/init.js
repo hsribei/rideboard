@@ -1,4 +1,6 @@
 Meteor.startup(function () {
+  T9n.setLanguage('pt');
+
   Session.set('pageTitle',
     Meteor.settings.public.site.siteName || 'Rideboard');
 

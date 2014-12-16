@@ -4,3 +4,9 @@
 # but you can also edit it by hand.
 
 meteor-platform
+mizzao:bootstrap-3
+useraccounts:bootstrap
+accounts-password
+softwarerero:accounts-t9n
+iron:router
+

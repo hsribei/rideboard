@@ -2,7 +2,8 @@
   "mailUrl": "",
   "public": {
     "site": {
-      "siteName": "Rideboard Demo"
+      "siteName": "Rideboard Demo",
+      "emailValidationRegExp": "(@unicamp\\.br$)|(@(\\w+\\.)+unicamp\\.br$)"
     }
   }
 }
