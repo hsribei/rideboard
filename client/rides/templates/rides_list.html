@@ -1,2 +1,18 @@
 <template name="ridesList">
+  {{#if currentUser}}
+    <!-- console.log(currentUser._id) -->
+
+    O Mural de Caronas é um projeto open source sem fins lucrativos. Para garantir
+    sua manutenção e desenvolvimento, por favor, considere fazer uma contribuição
+    mensal através da nossa campanha do Unlock. Obrigado!
+
+    <p style="text-align: center;">
+      <a href="http://unlock.fund" target="_blank"
+        class="btn btn-large btn-success">
+        Apoiar o Mural de Caronas no Unlock
+      </a>
+    </p>
+  {{else}}
+    {{> atForm state='signUp'}}
+  {{/if}}
 </template>
