@@ -1,20 +1,40 @@
 <template name="layout">
   <body>
-    <div class="github-fork-ribbon-wrapper right">
-      <div class="github-fork-ribbon">
-        <a href="https://github.com/obvio171/rideboard" target="_blank">Forque-me no GitHub</a>
-      </div>
+    <div class="navbar-outer">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">{{siteName}}</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://www.facebook.com/groups/GrupoUnicamp/permalink/10152879705420446/" target="_blank">
+                Facebook</a></li>
+              <li><a href="https://www.github.com/obvio171/rideboard/" target="_blank">
+                Github</a></li>
+              {{#if currentUser}}
+                <li><a href="{{pathFor 'signOut'}}">
+                  Fazer logout</a></li>
+              {{/if}}
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
     </div>
 
-    <div class="container-fluid">
-      <header class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">{{siteName}}</a>
-        </div>
-      </header>
-      <div id="main" class="row-fluid">
-        {{> yield}}
-      </div>
+    <div id="main" class="row-fluid">
+      {{> yield}}
     </div>
   </body>
 </template>
