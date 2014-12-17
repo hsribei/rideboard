@@ -2,7 +2,7 @@
   "mailUrl": "",
   "public": {
     "site": {
-      "siteName": "Rideboard Demo",
+      "siteName": "Mural de Caronas",
       "emailValidationRegExp": "(@unicamp\\.br$)|(@(\\w+\\.)+unicamp\\.br$)"
     }
   }

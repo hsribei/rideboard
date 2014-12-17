@@ -9,4 +9,5 @@ useraccounts:bootstrap
 accounts-password
 softwarerero:accounts-t9n
 iron:router
+tmeasday:publish-counts
 

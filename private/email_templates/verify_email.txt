@@ -1,0 +1,13 @@
+Opa, blz?
+
+Obrigado por se juntar ao Mural de Caronas! Agora só falta confirmar seu email.
+
+Para fazer isso, por favor, clique ou navegue até este endereço:
+
+{{url}}
+
+Muito obrigado!
+
+Abraço,
+
+Mural de Caronas
