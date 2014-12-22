@@ -7,3 +7,20 @@ Template.ridesItem.helpers({
     return this.userId === Meteor.userId();
   }
 });
+
+Template.ridesItem.events({
+  'click .edit-ride': function () {
+    Session.set('editRideId', this._id);
+  }
+});
+
+Template.ridesItem.helpers({
+  beforeRemove: function () {
+    return function (collection, id) {
+      var doc = collection.findOne(id);
+      if (confirm('Certeza que quer deletar essa carona?')) {
+        this.remove();
+      }
+    };
+  }
+});

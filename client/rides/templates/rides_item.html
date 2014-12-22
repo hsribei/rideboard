@@ -37,7 +37,8 @@
           </p>
           {{#if isOwner}}
             <br /><br />
-            Editar | Deletar carona
+            <a href="#" class="edit-ride">Editar</a> |
+            {{#quickRemoveButton collection="Rides" _id=this._id beforeRemove=beforeRemove}}Deletar{{/quickRemoveButton}} carona
           {{/if}}
         </div>
       </div>

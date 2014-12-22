@@ -57,10 +57,23 @@ Handlebars.registerHelper("userEmail", function (id) {
   var user = id ? Meteor.users.findOne(id) : Meteor.user();
   return user && user.emails[0].address;
 });
+Handlebars.registerHelper('Session',function(key){
+  return Session.get(key);
+});
 
 /* Disable mousewheel and up/down arrows on number input fields */
 Template.ridesList.events({
   'mousewheel .input-number–noSpinners': function (e) {
     e.preventDefault();
+  },
+  'click .update-ride': function () {
+    console.log('')
+    Session.set('editRideId', null);
+  }
+});
+
+Template.ridesList.helpers({
+  editRide: function () {
+    return Rides.findOne(Session.get('editRideId'));
   }
 });

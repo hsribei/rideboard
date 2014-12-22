@@ -15,4 +15,5 @@ tsega:bootstrap3-datetimepicker
 aldeed:autoform-bs-datetimepicker
 aldeed:collection2
 mrt:moment-timezone
+aldeed:delete-button
 
