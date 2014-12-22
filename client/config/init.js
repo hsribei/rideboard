@@ -7,4 +7,8 @@ Meteor.startup(function () {
   Tracker.autorun(function () {
     document.title = Session.get('pageTitle');
   });
+
+  Tracker.autorun(function () {
+    Meteor.subscribe("userData");
+  });
 });

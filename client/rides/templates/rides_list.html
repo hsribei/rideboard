@@ -1,5 +1,63 @@
 <template name="ridesList">
-  <div class="col-sm-10 col-sm-offset-1">
-    <h1>{{siteName}}</h1>
+  <div class="container">
+    <div id="main" class="row row-fluid">
+      <div class="well-sm text-center">
+        <h1>Mural de Caronas</h1>
+        <p class="lead">Barão Geraldo &lt;=&gt; São Paulo em tempo real</p>
+      </div>
+
+      <div id="aside" class="column col-sm-5">
+        {{#if userProfile}}
+          {{#autoForm collection="Rides" type="insert"
+            id="insertRideForm" resetOnSuccess=true}}
+            <fieldset>
+              <legend>Oferecer carona</legend>
+              <input type="hidden" value="{{currentUser._id}}" name="userId"
+                required="" data-schema-key="userId">
+              {{> afQuickField name='originAndDestination' options="allowed" noselect=true}}
+              {{> afQuickField name='departureTime'}}
+              {{> afQuickField name='availableSeats' class="input-number–noSpinners"}}
+              {{> afQuickField name='pricePerSeat' class="input-number–noSpinners"}}
+            </fieldset>
+            {{> afQuickField name='description' rows=6 placeholder="Descreva coisas como ponto(s) de encontro, tipo de carro, trajeto, tamanho de bagagens, tolerância de atraso, se leva em casa (preferível) ou não, se faz frete, etc."}}
+
+            <button type="submit" class="btn btn-primary">Oferecer carona</button>
+          {{/autoForm}}
+        {{else}}
+          {{#autoForm collection=Meteor.users schema=Schema.User
+            type="update" id="updateUserProfileForm"
+            afFieldInput-noselect=true doc=currentUser}}
+            {{> afObjectField name='profile'
+              template='bootstrap3_complete_profile'}}
+          {{/autoForm}}
+        {{/if}}
+
+      </div>
+
+      <div id="content" class="column col-sm-7">
+        <legend>Todas as caronas</legend>
+        {{#each this}}
+          {{> ridesItem}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="afObjectField_bootstrap3_complete_profile">
+  <div class="panel panel-default">
+    {{#with afFieldLabelText name=this.atts.name}}
+    <div class="panel-heading">
+      <h3 class="panel-title">Por favor, complete seu perfil</h3>
+    </div>
+    {{/with}}
+    <div class="panel-body">
+      {{#if afFieldIsInvalid name=this.atts.name}}
+      <span class="help-block">{{{afFieldMessage name=this.atts.name}}}</span>
+      {{/if}}
+      {{> afQuickFields name=this.atts.name}}
+    <button type="submit" class="btn btn-primary">
+      Atualizar perfil</button>
+    </div>
   </div>
 </template>

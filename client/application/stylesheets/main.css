@@ -1,0 +1,7 @@
+/* Disable mousewheel and up/down arrows on number input fields */
+input[type=number].input-number–noSpinners { -moz-appearance: textfield; }
+input[type=number].input-number–noSpinners::-webkit-inner-spin-button,
+input[type=number].input-number–noSpinners::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

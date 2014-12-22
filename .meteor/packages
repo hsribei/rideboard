@@ -10,4 +10,9 @@ accounts-password
 softwarerero:accounts-t9n
 iron:router
 tmeasday:publish-counts
+aldeed:autoform
+tsega:bootstrap3-datetimepicker
+aldeed:autoform-bs-datetimepicker
+aldeed:collection2
+mrt:moment-timezone
 

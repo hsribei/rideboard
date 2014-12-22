@@ -1,7 +1,46 @@
-<template name="rideItem">
-  <div class="ride">
-    <div class="ride-content">
-      <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+<template name="ridesItem">
+  <div class="row row-fluid">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="ride-content column col-sm-7">
+          <h3 style="margin-top: 0px;">{{originAndDestination}}</h3>
+          <p>
+            <strong>Partida: {{formatDate departureTime 'LLL'}}</strong>
+          </p>
+          <p>
+            R$ {{pricePerSeat}} por pessoa, {{availableSeats}} vagas disponíveis
+          </p>
+          <p>
+            {{description}}
+          </p>
+          <hr style="margin-bottom: 5px;"/>
+          <p>
+            <small>Carona publicada em {{formatDate createdAt 'lll'}}<br />
+              Última atualização em {{formatDate updatedAt 'lll'}}</small>
+          </p>
+        </div>
+        <div class="column col-sm-5" style="text-align: right;">
+          <p>
+            {{#if ownerProfile.facebookProfileUrl}}
+              <a href="{{ownerProfile.facebookProfileUrl}}" target="_blank">{{ownerProfile.firstName}} {{ownerProfile.lastName}}</a>
+            {{else}}
+              {{ownerProfile.firstName}} {{ownerProfile.lastName}}
+            {{/if}}
+          </p>
+          <p>
+            {{#each ownerProfile.phoneNumbers}}
+              {{this}}
+            {{/each}}
+          </p>
+          <p>
+            {{userEmail userId}}<br /><span style="color: green;">(email verificado)</span>
+          </p>
+          {{#if isOwner}}
+            <br /><br />
+            Editar | Deletar carona
+          {{/if}}
+        </div>
+      </div>
     </div>
   </div>
 </template>
