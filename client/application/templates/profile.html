@@ -1,0 +1,37 @@
+<template name="profile">
+  <div class="container">
+    <div id="main" class="row row-fluid">
+      <div class="well-sm text-center">
+        <h1>Mural de Caronas</h1>
+        <p class="lead">Barão Geraldo &lt;=&gt; São Paulo em tempo real</p>
+      </div>
+
+      <div id="aside" class="column col-sm-4 col-sm-offset-4">
+        {{#autoForm collection=Meteor.users schema=Schema.User
+          type="update" id="updateUserProfileForm"
+          afFieldInput-noselect=true doc=currentUser}}
+          {{> afObjectField name='profile'
+            template='bootstrap3_update_profile'}}
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="afObjectField_bootstrap3_update_profile">
+  <div class="panel panel-default">
+    {{#with afFieldLabelText name=this.atts.name}}
+      <div class="panel-heading">
+        <h3 class="panel-title">Editar perfil</h3>
+      </div>
+    {{/with}}
+    <div class="panel-body">
+      {{#if afFieldIsInvalid name=this.atts.name}}
+        <span class="help-block">{{{afFieldMessage name=this.atts.name}}}</span>
+      {{/if}}
+      {{> afQuickFields name=this.atts.name}}
+      <button type="submit" class="btn btn-primary update-profile">
+        Atualizar perfil</button>
+    </div>
+  </div>
+</template>
