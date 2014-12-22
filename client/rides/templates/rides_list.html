@@ -7,38 +7,39 @@
       </div>
 
       <div id="aside" class="column col-sm-5">
-        {{#if userProfile.firstName}}
-          {{#if Session 'editRideId'}}
-            {{#autoForm collection="Rides" type="update" doc=editRide
-              id="updateRideForm" resetOnSuccess=true}}
-              <fieldset>
-                <legend>Editar carona</legend>
-                {{> afQuickField name='originAndDestination' options="allowed" noselect=true}}
-                {{> afQuickField name='departureTime'}}
-                {{> afQuickField name='availableSeats' class="input-number–noSpinners"}}
-                {{> afQuickField name='pricePerSeat' class="input-number–noSpinners"}}
-              </fieldset>
-              {{> afQuickField name='description' rows=6 placeholder="Descreva coisas como ponto(s) de encontro, tipo de carro, trajeto, tamanho de bagagens, tolerância de atraso, se leva em casa (preferível) ou não, se faz frete, etc."}}
+        <div class="form-group">
+          {{#if userProfile.firstName}}
+            {{#if Session 'editRideId'}}
+              {{#autoForm collection="Rides" type="update" doc=editRide
+                id="updateRideForm" resetOnSuccess=true}}
+                <fieldset>
+                  <legend>Editar carona</legend>
+                  {{> afQuickField name='originAndDestination' options="allowed" noselect=true}}
+                  {{> afQuickField name='departureTime'}}
+                  {{> afQuickField name='availableSeats' class="input-number–noSpinners"}}
+                  {{> afQuickField name='pricePerSeat' class="input-number–noSpinners"}}
+                </fieldset>
+                {{> afQuickField name='description' rows=6 placeholder="Descreva coisas como ponto(s) de encontro, tipo de carro, trajeto, tamanho de bagagens, tolerância de atraso, se leva em casa (preferível) ou não, se faz frete, etc."}}
 
-              <button type="submit" class="btn btn-primary update-ride">Atualizar carona</button>
-            {{/autoForm}}
-          {{else}}
-            {{#autoForm collection="Rides" type="insert"
-              id="insertRideForm" resetOnSuccess=true}}
-              <fieldset>
-                <legend>Oferecer carona</legend>
-                <input type="hidden" value="{{currentUser._id}}" name="userId"
-                  required="" data-schema-key="userId">
-                {{> afQuickField name='originAndDestination' options="allowed" noselect=true}}
-                {{> afQuickField name='departureTime'}}
-                {{> afQuickField name='availableSeats' class="input-number–noSpinners"}}
-                {{> afQuickField name='pricePerSeat' class="input-number–noSpinners"}}
-              </fieldset>
-              {{> afQuickField name='description' rows=6 placeholder="Descreva coisas como ponto(s) de encontro, tipo de carro, trajeto, tamanho de bagagens, tolerância de atraso, se leva em casa (preferível) ou não, se faz frete, etc."}}
+                <button type="submit" class="btn btn-primary update-ride">Atualizar carona</button>
+              {{/autoForm}}
+            {{else}}
+              {{#autoForm collection="Rides" type="insert"
+                id="insertRideForm" resetOnSuccess=true}}
+                <fieldset>
+                  <legend>Oferecer carona</legend>
+                  <input type="hidden" value="{{currentUser._id}}" name="userId"
+                    required="" data-schema-key="userId">
+                  {{> afQuickField name='originAndDestination' options="allowed" noselect=true}}
+                  {{> afQuickField name='departureTime'}}
+                  {{> afQuickField name='availableSeats' class="input-number–noSpinners"}}
+                  {{> afQuickField name='pricePerSeat' class="input-number–noSpinners"}}
+                </fieldset>
+                {{> afQuickField name='description' rows=6 placeholder="Descreva coisas como ponto(s) de encontro, tipo de carro, trajeto, tamanho de bagagens, tolerância de atraso, se leva em casa (preferível) ou não, se faz frete, etc."}}
 
-                <button type="submit" class="btn btn-primary">Oferecer carona</button>
-            {{/autoForm}}
-          {{/if}}
+                  <button type="submit" class="btn btn-primary">Oferecer carona</button>
+              {{/autoForm}}
+            {{/if}}
         {{else}}
           {{#autoForm collection=Meteor.users schema=Schema.User
             type="update" id="updateUserProfileForm"
@@ -47,6 +48,7 @@
               template='bootstrap3_complete_profile'}}
           {{/autoForm}}
         {{/if}}
+      </div>
 
       </div>
 
