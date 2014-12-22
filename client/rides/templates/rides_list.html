@@ -7,7 +7,7 @@
       </div>
 
       <div id="aside" class="column col-sm-5">
-        {{#if userProfile}}
+        {{#if userProfile.firstName}}
           {{#if Session 'editRideId'}}
             {{#autoForm collection="Rides" type="update" doc=editRide
               id="updateRideForm" resetOnSuccess=true}}

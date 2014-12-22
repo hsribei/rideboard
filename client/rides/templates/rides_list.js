@@ -50,9 +50,6 @@ Handlebars.registerHelper("Schema", Meteor.Schema);
 Handlebars.registerHelper("userProfile", function () {
   return Meteor.user() && Meteor.user().profile;
 });
-Handlebars.registerHelper("userProfile", function () {
-  return Meteor.user() && Meteor.user().emails;
-});
 Handlebars.registerHelper("userEmail", function (id) {
   var user = id ? Meteor.users.findOne(id) : Meteor.user();
   return user && user.emails[0].address;
