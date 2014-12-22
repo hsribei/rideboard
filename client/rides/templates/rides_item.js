@@ -22,5 +22,11 @@ Template.ridesItem.helpers({
         this.remove();
       }
     };
+  },
+  hasUpdate: function () {
+    console.log('createdAt: ' + this.createdAt)
+    console.log("updatedAt: " + this.updatedAt);
+    console.log(this.updatedAt.valueOf() !== this.createdAt.valueOf());
+    return this.updatedAt.valueOf() !== this.createdAt.valueOf();
   }
 });

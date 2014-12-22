@@ -15,8 +15,12 @@
           </p>
           <hr style="margin-bottom: 5px;"/>
           <p>
-            <small>Carona publicada em {{formatDate createdAt 'lll'}}<br />
-              Última atualização em {{formatDate updatedAt 'lll'}}</small>
+            <small>
+              Carona publicada em {{formatDate createdAt 'lll'}}<br />
+              {{#if hasUpdate}}
+                Última atualização em {{formatDate updatedAt 'lll'}}
+              {{/if}}
+            </small>
           </p>
         </div>
         <div class="column col-sm-5" style="text-align: right;">
