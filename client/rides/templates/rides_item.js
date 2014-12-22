@@ -24,9 +24,8 @@ Template.ridesItem.helpers({
     };
   },
   hasUpdate: function () {
-    console.log('createdAt: ' + this.createdAt)
-    console.log("updatedAt: " + this.updatedAt);
-    console.log(this.updatedAt.valueOf() !== this.createdAt.valueOf());
-    return this.updatedAt.valueOf() !== this.createdAt.valueOf();
+    // Don't show updatedAt if it's less than 10min after creation
+    var timeDifference = this.updatedAt.getTime() - this.createdAt.getTime();
+    return  timeDifference > 10*60*1000;
   }
 });
