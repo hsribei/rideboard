@@ -37,7 +37,7 @@
             {{/each}}
           </p>
           <p>
-            {{userEmail userId}}<br /><span style="color: green;">(email verificado)</span>
+            <a href="mailto:{{userEmail userId}}" target="_blank">{{userEmail userId}}</a><br /><span style="color: green;">(email verificado)</span>
           </p>
           {{#if isOwner}}
             <br /><br />
