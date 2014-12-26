@@ -1,0 +1,40 @@
+Opa, blz?
+
+Meu nome é Helder Ribeiro, sou aluno da Engenharia de Computação e, como muita gente da Unicamp, eu dependia do Unicaronas para ir para São Paulo e voltar toda semana.
+
+Como não temos mais Unicaronas e as alternativas não têm boa segurança nem organização de informação, comecei um novo site.
+
+Chama-se Mural de Caronas e já está no ar.
+
+Para se cadastrar, é só seguir este link: {{url}}
+
+Se não quiser participar, tudo bem. Este é um email único e não vou mais te
+encher o saco com isso :)
+
+Mas se você usa ou oferece caronas com frequência, acho que vai curtir.
+
+É seguro: só entra com email da Unicamp.
+
+É sem lucro: software livre hospedado de graça e aberto à contribuição de outros(as) desenvolvedores(as).
+
+É sem atrito: carona desintermediada, contato direto do jeito que as partes preferirem (ex. telefone/WhatsApp).
+
+É flexível: funciona bem no celular também.
+
+Participe e ajude a construi essa comunidade conosco. Por favor, clique abaixo para se cadastrar:
+
+{{url}}
+
+Se puder compartilhar nos grupos de cursos e caronas e ajudar a divulgar, agradeço muito.
+
+O Mural de Caronas foi feito sem fins lucrativos como um *bem público* para cuidarmos e usufruirmos juntos.
+
+Já usei tanta carona na vida, esse é meu jeito de dar de volta.
+
+Obrigado por participar!
+
+Abs,
+
+Helder
+
+P.S.: qualquer dúvida é só postar na thread no grupo da Unicamp: https://www.facebook.com/groups/GrupoUnicamp/permalink/10152893928590446/

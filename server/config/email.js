@@ -31,6 +31,16 @@ function setupEmail() {
     return templateCompiled({'url': url});
   };
 
+  Accounts.emailTemplates.enrollAccount.subject = function (user) {
+    return "Site de carona solidária exclusivo para a Unicamp. Participe!";
+  };
+
+  Accounts.emailTemplates.enrollAccount.text = function (user, url) {
+    var template = Assets.getText('email_templates/invitation.txt');
+    var templateCompiled = _.template(template);
+    return templateCompiled({'url': url});
+  };
+
 }
 
 Meteor.startup(function () {
