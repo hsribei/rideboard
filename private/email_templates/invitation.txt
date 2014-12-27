@@ -1,25 +1,37 @@
 Opa, blz?
 
-Meu nome é Helder Ribeiro, sou aluno da Engenharia de Computação e, como muita gente da Unicamp, eu dependia do Unicaronas para ir para São Paulo e voltar toda semana.
+Meu nome é Helder Ribeiro, sou aluno da Computação e estou começando um novo site de caronas **sem fins lucrativos**.
 
-Como não temos mais Unicaronas e as alternativas não têm boa segurança nem organização de informação, comecei um novo site.
+Se você pega ou oferece caronas com frequência na Unicamp, sabe que a coisa ficou bem mais difícil depois que o Unicaronas saiu do ar.
 
-Chama-se Mural de Caronas e já está no ar.
+Sites e grupos de Facebook alternativos são menos seguros porque não verificam email acadêmico.
 
-Para se cadastrar, é só seguir este link: {{url}}
+A busca também é mais difícil porque, por padrão, as caronas não são ordenadas por data.
+
+Para piorar, o contato é intermediado: sites como o Tripda não deixam que as pessoas troquem telefone/contato para obrigá-las a marcar a carona pelo site.
+
+Eu uso muito carona então, na falta de opção melhor, comecei um novo site.
+
+Chama-se **Mural de Caronas** e já está no ar.
+
+Para se cadastrar e ver as caronas, é só seguir este link: {{url}}
+
+(Por segurança, o site pede que você crie uma senha antes de entrar.)
 
 Se não quiser participar, tudo bem. Este é um email único e não vou mais te
 encher o saco com isso :)
 
-Mas se você usa ou oferece caronas com frequência, acho que vai curtir.
+Mas se você usa ou oferece caronas com frequência, acho que vai ser muito útil.
 
-É seguro: só entra com email da Unicamp.
+Algumas vantagens do Mural de Caronas:
 
-É sem lucro: software livre hospedado de graça e aberto à contribuição de outros(as) desenvolvedores(as).
+- É seguro: só entra com email da Unicamp.
 
-É sem atrito: carona desintermediada, contato direto do jeito que as partes preferirem (ex. telefone/WhatsApp).
+- É sem lucro: software livre hospedado de graça e aberto à contribuição de outros(as) desenvolvedores(as).
 
-É flexível: funciona bem no celular também.
+- É sem atrito: carona desintermediada, contato direto do jeito que as partes preferirem (ex. telefone/WhatsApp).
+
+- É flexível: funciona bem no celular também.
 
 Participe e ajude a construi essa comunidade conosco. Por favor, clique abaixo para se cadastrar:
 

@@ -9,7 +9,8 @@ function setupEmail() {
   }
 
   Accounts.emailTemplates.siteName = Meteor.settings.public.site.siteName;
-  Accounts.emailTemplates.from = "Mural de Caronas <contato@muraldecaronas.org>";
+  Accounts.emailTemplates.from = "Mural de Caronas" +
+    "<contato@muraldecaronas.org>";
 
   Accounts.emailTemplates.verifyEmail.subject = function (user) {
     return "Só mais um passo: confirmar email";
@@ -32,7 +33,8 @@ function setupEmail() {
   };
 
   Accounts.emailTemplates.enrollAccount.subject = function (user) {
-    return "Site de carona solidária exclusivo para a Unicamp. Participe!";
+    return "Novo site de *caronas da Unicamp* é open source e exige email " +
+      "acadêmico";
   };
 
   Accounts.emailTemplates.enrollAccount.text = function (user, url) {
