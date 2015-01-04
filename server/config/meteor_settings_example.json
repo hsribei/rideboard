@@ -1,5 +1,8 @@
 {
   "mailUrl": "",
+  "dataUrls": {
+    "inviteEmails": ""
+  },
   "public": {
     "site": {
       "siteName": "Mural de Caronas",
