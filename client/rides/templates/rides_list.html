@@ -40,15 +40,15 @@
                   <button type="submit" class="btn btn-primary">Oferecer carona</button>
               {{/autoForm}}
             {{/if}}
-        {{else}}
-          {{#autoForm collection=Meteor.users schema=Schema.User
-            type="update" id="updateUserProfileForm"
-            afFieldInput-noselect=true doc=currentUser}}
-            {{> afObjectField name='profile'
-              template='bootstrap3_complete_profile'}}
-          {{/autoForm}}
-        {{/if}}
-      </div>
+          {{else}}
+            {{#autoForm collection=Meteor.users schema=Schema.User
+              type="update" id="updateUserProfileForm"
+              afFieldInput-noselect=true doc=currentUser}}
+              {{> afObjectField name='profile'
+                template='bootstrap3_complete_profile'}}
+            {{/autoForm}}
+          {{/if}}
+        </div>
 
       </div>
 

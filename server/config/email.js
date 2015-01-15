@@ -9,7 +9,7 @@ function setupEmail() {
   }
 
   Accounts.emailTemplates.siteName = Meteor.settings.public.site.siteName;
-  Accounts.emailTemplates.from = "Mural de Caronas" +
+  Accounts.emailTemplates.from = "Mural de Caronas " +
     "<contato@muraldecaronas.org>";
 
   Accounts.emailTemplates.verifyEmail.subject = function (user) {

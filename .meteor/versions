@@ -54,6 +54,7 @@ mrt:moment@2.8.1
 mrt:moment-timezone@0.2.1
 npm-bcrypt@0.7.7
 observe-sequence@1.0.4
+obvio171:postal@1.0.1
 ordered-dict@1.0.2
 perak:markdown@1.0.4
 random@1.0.2
