@@ -7,6 +7,10 @@
       </div>
 
       <div id="aside" class="column col-sm-4 col-sm-offset-4">
+        <div id="successAlert" class="alert alert-success"
+          style="display: none;" role="alert">
+          Sucesso!
+        </div>
         {{#autoForm collection=Meteor.users schema=Schema.User
           type="update" id="updateUserProfileForm"
           afFieldInput-noselect=true doc=currentUser}}

@@ -25,7 +25,7 @@
               {{/autoForm}}
             {{else}}
               {{#autoForm collection="Rides" type="insert"
-                id="insertRideForm" resetOnSuccess=true}}
+                id="insertRideForm" resetOnSuccess=false}}
                 <fieldset>
                   <legend>Oferecer carona</legend>
                   <input type="hidden" value="{{currentUser._id}}" name="userId"
@@ -53,7 +53,15 @@
       </div>
 
       <div id="content" class="column col-sm-7">
-        <legend>Todas as caronas</legend>
+        <legend>Todas as caronas
+          {{#if userProfile}}
+            {{#if currentUser.profile.isSubscribed}}
+              <a href="#" class="subscribed btn btn-default pull-right" role="button"><span class="glyphicon glyphicon-envelope"></span> Assinado</a>
+            {{else}}
+              <a href="#" class="subscribable btn btn-default pull-right" role="button"><span class="glyphicon glyphicon-envelope"></span> Assinar por email</a>
+            {{/if}}
+          {{/if}}
+        </legend>
         {{#each this}}
           {{> ridesItem}}
         {{/each}}

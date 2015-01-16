@@ -14,6 +14,40 @@ Rides.allow({
   }
 });
 
+Rides.after.insert(function (userId, doc) {
+  var recipients = Meteor.users.find({ 'profile.isSubscribed': true }).fetch();
+
+  _(recipients).each(function (recipient) {
+    var profile = recipient.profile;
+    var message = {
+      from: "Mural de Caronas <contato@muraldecaronas.org>",
+      to: recipient.emails[0].address,
+      subject: "Nova carona " + doc.originAndDestination,
+      text:
+        "Olá, muralista!\n\n" +
+        "Uma nova carona foi postada no sentido " + doc.originAndDestination + ". Confira os detalhes:\n\n" +
+        "----------\n\n" +
+        "Horário de partida: " + moment(doc.departureTime).format('LLL') + "\n\n" +
+        "Número de assentos disponíveis: " + doc.availableSeats + "\n\n" +
+        "Preço por assento: R$ " + doc.pricePerSeat + "\n\n" +
+        "Informação adicional:\n\n" +
+        doc.description + "\n\n" +
+        "----------\n\n" +
+        "Motorista: " + profile.firstName + " " + profile.lastName + "\n\n" +
+        "Email (verificado): " + recipient.emails[0].address + "\n\n" +
+        (profile.facebookProfileUrl ? "Facebook: " + profile.facebookProfileUrl + "\n\n": '') +
+        "Telefones: " + _(profile.phoneNumbers).join(" || ") + "\n\n" +
+        "----------\n\n" +
+        "Obrigado pela preferência =)\n\n" +
+        "Abs,\n\n" +
+        "Mural de Caronas\n\n" +
+        "Obs.: se não quiser mais receber estes emails, por favor descadastre-se aqui: http://www.muraldecaronas.org/perfil"
+    }
+    Email.send(message);
+  });
+
+});
+
 Meteor.methods({
   inviteEmails: function () {
     var url = Meteor.settings.dataUrls['inviteEmails'];
@@ -31,5 +65,18 @@ Meteor.methods({
       }
     });
     return createdUserIds.length;
+  },
+  subscribe: function () {
+    if (Meteor.userId()) {
+      Meteor.users.update({ _id: Meteor.userId() },
+    { $set: { 'profile.isSubscribed': true } });
+    }
+  },
+  unsubscribe: function () {
+    if (Meteor.userId()) {
+      Meteor.users.update({ _id: Meteor.userId() },
+    { $set: { 'profile.isSubscribed': false } });
   }
+}
+
 });

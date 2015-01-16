@@ -66,6 +66,26 @@ Template.ridesList.events({
   'click .update-ride': function () {
     console.log('')
     Session.set('editRideId', null);
+  },
+  'click .subscribable': function(e) {
+    e.preventDefault();
+    Meteor.call('subscribe');
+  },
+  'click .unsubscribable': function(e) {
+    e.preventDefault();
+    Meteor.call('unsubscribe');
+  },
+  'mouseenter .subscribed': function(e) {
+    e.preventDefault();
+    $(e.target).removeClass().
+    addClass("unsubscribable btn btn-danger pull-right").
+    html('<span class="glyphicon glyphicon-remove-circle"></span> Parar de assinar');
+  },
+  'mouseleave .unsubscribable': function(e) {
+    e.preventDefault();
+    $(e.target).removeClass().
+    addClass("subscribed btn btn-default pull-right").
+    html('<span class="glyphicon glyphicon-envelope"></span> Assinado');
   }
 });
 
