@@ -1,4 +1,8 @@
 {
+  "kadira": {
+    "appId": "",
+    "appSecret": ""
+  },
   "mailUrl": "",
   "dataUrls": {
     "inviteEmails": ""
