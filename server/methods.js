@@ -38,6 +38,7 @@ Rides.after.insert(function (userId, doc) {
         (profile.facebookProfileUrl ? "Facebook: " + profile.facebookProfileUrl + "\n\n": '') +
         "Telefones: " + _(profile.phoneNumbers).join(" || ") + "\n\n" +
         "----------\n\n" +
+        "Para ver esta e outras caronas, visite o Mural:\n\nhttp://www.muraldecaronas.org\n\n" +
         "Obrigado pela preferência =)\n\n" +
         "Abs,\n\n" +
         "Mural de Caronas\n\n" +
