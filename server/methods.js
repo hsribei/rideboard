@@ -16,9 +16,10 @@ Rides.allow({
 
 Rides.after.insert(function (userId, doc) {
   var recipients = Meteor.users.find({ 'profile.isSubscribed': true }).fetch();
+  var rideOwner = Meteor.users.findOne(doc.userId);
+    var profile = rideOwner.profile;
 
   _(recipients).each(function (recipient) {
-    var profile = recipient.profile;
     var message = {
       from: "Mural de Caronas <contato@muraldecaronas.org>",
       to: recipient.emails[0].address,
@@ -34,7 +35,7 @@ Rides.after.insert(function (userId, doc) {
         doc.description + "\n\n" +
         "----------\n\n" +
         "Motorista: " + profile.firstName + " " + profile.lastName + "\n\n" +
-        "Email (verificado): " + recipient.emails[0].address + "\n\n" +
+        "Email (verificado): " + rideOwner.emails[0].address + "\n\n" +
         (profile.facebookProfileUrl ? "Facebook: " + profile.facebookProfileUrl + "\n\n": '') +
         "Telefones: " + _(profile.phoneNumbers).join(" || ") + "\n\n" +
         "----------\n\n" +
