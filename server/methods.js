@@ -28,7 +28,7 @@ Rides.after.insert(function (userId, doc) {
         "Olá, muralista!\n\n" +
         "Uma nova carona foi postada no sentido " + doc.originAndDestination + ". Confira os detalhes:\n\n" +
         "----------\n\n" +
-        "Horário de partida: " + moment(doc.departureTime).format('LLL') + "\n\n" +
+        "Horário de partida: " + moment(doc.departureTime).tz('America/Sao_Paulo').format('LLLL z') + "\n\n" +
         "Número de assentos disponíveis: " + doc.availableSeats + "\n\n" +
         "Preço por assento: R$ " + doc.pricePerSeat + "\n\n" +
         "Informação adicional:\n\n" +
