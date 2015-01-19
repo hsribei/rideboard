@@ -5,7 +5,7 @@
         <div class="ride-content column col-sm-7">
           <h3 style="margin-top: 0px;">{{originAndDestination}}</h3>
           <p>
-            <strong>Partida: {{formatDate departureTime 'LLL'}}</strong>
+            <strong>Partida: {{formatDate departureTime 'LLLL'}}</strong>
           </p>
           <p>
             R$ {{pricePerSeat}} por pessoa, {{availableSeats}} vagas disponíveis
@@ -16,9 +16,9 @@
           <hr style="margin-bottom: 5px;"/>
           <p>
             <small>
-              Carona publicada em {{formatDate createdAt 'lll'}}<br />
+              Carona publicada em {{formatDate createdAt 'llll'}}<br />
               {{#if hasUpdate}}
-                Última atualização em {{formatDate updatedAt 'lll'}}
+                Última atualização em {{formatDate updatedAt 'llll'}}
               {{/if}}
             </small>
           </p>
