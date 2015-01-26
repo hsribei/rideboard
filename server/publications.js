@@ -3,7 +3,7 @@ Meteor.publish('rides', function () {
   // the future because people might need to refer to the ride details around
   // the time they're trying to meet each other.
   var d = new Date();
-  d.setDate(d.getDate() - 1);
+  d.setDate(d.getDate() - 2);
   return Rides.find({ departureTime: { $gte: d } },
     { sort: { departureTime: 1 } });
 });
